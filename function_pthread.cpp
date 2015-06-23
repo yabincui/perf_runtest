@@ -3,19 +3,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+volatile int var1;
+
 void* ThreadFunction(void* arg) {
   pthread_setname_np(pthread_self(), "Thread1");
   uintptr_t loop_count = reinterpret_cast<uintptr_t>(arg);
   while (loop_count-- > 0) {
     for (volatile int i = 0; i < 1000000000; ++i) {
+      ++var1;
     }
   }
   return nullptr;
 }
 
+volatile int var2;
+
 __attribute__((noinline)) void MainThreadFunction(uintptr_t loop_count) {
   while (loop_count-- > 0) {
     for (volatile int i = 0; i < 1000000000; ++i) {
+      ++var2;
     }
   }
 }

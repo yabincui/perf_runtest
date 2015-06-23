@@ -1,10 +1,15 @@
+volatile int var1;
+
 __attribute__((noinline)) void Function1() {
-  for (volatile int i = 0; i <= 1000000000; ++i) {
+  for (int i = 0; i <= 1000000000; ++i) {
+	  ++var1;
   }
 }
 
+volatile int var2;
 __attribute__((noinline)) void Function2() {
-  for (volatile int i = 0; i <= 1000000000; ++i) {
+  for (int i = 0; i <= 1000000000; ++i) {
+    ++var2;
   }
 }
 

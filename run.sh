@@ -18,7 +18,8 @@ TEST_LIST=(one_function
 function run_record_report {
   PERF=$1
   TESTNAME=$2
-  ${PERF} record -e cpu-cycles:u -o ${PERF}_${TESTNAME}_perf.data ./runtest_${TESTNAME}
+  # -c seems more stable than -f.
+  ${PERF} record -c 100000 -e cpu-cycles:u -o ${PERF}_${TESTNAME}_perf.data ./runtest_${TESTNAME}
   ${PERF} report -i ${PERF}_${TESTNAME}_perf.data >${PERF}_${TESTNAME}_perf.report
 }
 

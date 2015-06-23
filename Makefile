@@ -16,4 +16,4 @@ runtest_% : %.cpp
 	$(CC) $(CFLAGS) -o $@ $< $(LDFLAGS)
 	
 clean:
-	rm -rf *perf.data* *perf.report
+	rm -rf *perf.data* *perf.report $(exec_targets)
