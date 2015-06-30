@@ -41,3 +41,7 @@ include $(LOCAL_PATH)/Android.build.mk
 module := comm_change
 comm_change_src_files := comm_change.cpp
 include $(LOCAL_PATH)/Android.build.mk
+
+module := function_recursive
+function_recursive_src_files := function_recursive
+include $(LOCAL_PATH)/Android.build.mk
