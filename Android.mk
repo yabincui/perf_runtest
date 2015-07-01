@@ -43,5 +43,9 @@ comm_change_src_files := comm_change.cpp
 include $(LOCAL_PATH)/Android.build.mk
 
 module := function_recursive
-function_recursive_src_files := function_recursive
+function_recursive_src_files := function_recursive.cpp
+include $(LOCAL_PATH)/Android.build.mk
+
+module := function_indirect_recursive
+function_indirect_recursive_src_files := function_indirect_recursive.cpp
 include $(LOCAL_PATH)/Android.build.mk

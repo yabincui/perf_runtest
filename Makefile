@@ -5,6 +5,7 @@ targets := one_function \
 					 function_pthread \
 					 comm_change \
 					 function_recursive \
+					 function_indirect_recursive \
 
 exec_targets := $(addprefix runtest_,$(targets))
 

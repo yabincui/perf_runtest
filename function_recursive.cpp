@@ -5,16 +5,16 @@ __attribute__((noinline)) void FunctionRecursive(int loop) {
   if (loop == 0) {
     return;
   }
-  for (int i = 0; i < 1000000000; ++i) {
+  for (int i = 0; i < 300000000; ++i) {
     ++var1;
   }
   FunctionRecursive(loop - 1);
-  for (int i = 0; i < 1000000000; ++i) {
+  for (int i = 0; i < 300000000; ++i) {
     ++var2;
   }
 }
 
 int main() {
-  FunctionRecursive(3);
+  FunctionRecursive(4);
   return 0;
 }
